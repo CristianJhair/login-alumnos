@@ -1,0 +1,26 @@
+﻿@model List<Matricula.Models.TbCurso>
+
+<div>
+    <h2>Matrícula</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Curso</th>
+                <th>Descripción</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var curso in Model)
+            {
+                <tr>
+                    <td>@curso.NIdCurso</td>
+                    <td>@curso.SDesCurso</td>
+                    <td>
+                        <a asp-controller="Matricula" asp-action="Matricular" asp-route-cursoId="@curso.NIdCurso">Matricular</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
